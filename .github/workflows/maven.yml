@@ -36,6 +36,11 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: view build
       run: pwd 
+      
+  publish:
+  needs: build
+  
+    steps:
     - name: login to docker hub
       id: docker-hub
       env:
