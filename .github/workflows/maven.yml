@@ -37,7 +37,7 @@ jobs:
     - name: login to docker hub
       id: docker-hub
       env:
-            username: jaggubhai/ubuntu
+            username: jaggubhai
             password: Chandapur@123#
       run: |
             docker login -u $username -p $password 
