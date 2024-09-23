@@ -38,7 +38,7 @@ jobs:
       id: docker-hub
       env:
             username: jaggubhai/ubuntu
-            password: Chnadapur@123#
+            password: Chandapur@123#
       run: |
             docker login -u $username -p $password 
     - name: build the docker image
