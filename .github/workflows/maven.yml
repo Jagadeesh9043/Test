@@ -34,5 +34,20 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: login to docker hub
+      id: docker-hub
+      env:
+            username: jaggubhai/ubuntu
+            password: Chnadapur@123#
+      run: |
+            docker login -u $username -p $password 
+    - name: build the docker image
+      id: build-docker-image
+      run: |
+            ls -la 
+            docker build . -f Dockerfile -t jaggubhai/ubuntu:otherv3
+    - name: push the docker image
+      id: push-docker-image
+      run: docker push jaggubhai/ubuntu:otherv3
 
    
